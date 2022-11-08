@@ -1,8 +1,10 @@
 import os
+import secrets
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = '/opt/civ4/data'
 
-SECRET_KEY = 'your_key'
+SECRET_KEY = secrets.token_hex(nbytes=50)
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
