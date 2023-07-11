@@ -4,7 +4,7 @@ FROM ubuntu:jammy
 COPY requirements.txt /opt/civ4/requirements.txt
 
 # Install dependencies.
-RUN apt update && apt install -y python3-pip node-less default-libmysqlclient-dev && pip install -r /opt/civ4/requirements.txt
+RUN apt-get update && apt-get install -y python3-pip pkg-config node-less default-libmysqlclient-dev && pip install -r /opt/civ4/requirements.txt
 
 # Copy files.
 COPY civdj /opt/civ4/civdj
