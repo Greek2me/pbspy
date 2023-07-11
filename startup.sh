@@ -16,4 +16,4 @@ if [ ! -f $TESTFILE ]; then
 fi
 
 # Run server.
-python3 /opt/civ4/manage.py runserver 0.0.0.0:${DJANGO_PORT}
+python3 /opt/civ4/manage.py runserver --noreload 0.0.0.0:${DJANGO_PORT}
