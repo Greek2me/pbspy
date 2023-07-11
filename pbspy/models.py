@@ -1206,5 +1206,5 @@ class GameLogMissedTurn(GameLog):
                 format_names.append(_("<li>(id={})</li>").format(int(player_id)))
             else:
                 format_names.append(_("<li>{} (id={})</li>").format(html.escape(player_name), int(player_id)))
-        return _("the following players did not finished their turn:") + "<ul>{players}</ul>".\
+        return _("the following players did not finish their turn:") + "<ul>{players}</ul>".\
             format(players="\r\n".join(format_names))

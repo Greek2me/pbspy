@@ -444,7 +444,7 @@ msgid "<li>{} (id={})</li>"
 msgstr ""
 
 #: pbspy/models.py:1209
-msgid "the following players did not finished their turn:"
+msgid "the following players did not finish their turn:"
 msgstr "Die folgenden Spieler haben ihre Runde nicht beendet:"
 
 #: pbspy/templates/pbspy/base.html:8
