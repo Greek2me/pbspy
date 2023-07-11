@@ -17,14 +17,14 @@ functions to show the game status, a game log and to administrate the game.
 ## Installation of Django + Django packages with pip
 
 Here, we assume python3 >= python3.8.
-It is recommended to install the software within a virtualenv with pip.
+It is recommended to install the software with poetry.
 
 ### Dependencies
 
 ```
-sudo apt install python3-pip node-less
+sudo apt install python3-poetry node-less
 sudo apt install default-libmysqlclient-dev
-pip3 install -r requirements.txt
+poetry install
 ```
 
 ### Configuration
@@ -39,25 +39,35 @@ for other setups.
 This uses Debug mode. Release mode requires more steps.
 
 ```
-python3 manage.py migrate
-python3 manage.py migrate static_precompiler
-python3 manage.py compilestatic
-python3 manage.py collectstatic
-python3 manage.py createsuperuser
+poetry run python manage.py migrate
+poetry run python manage.py migrate static_precompiler
+poetry run python manage.py compilestatic
+poetry run python manage.py collectstatic
+poetry run python manage.py createsuperuser
 ```
 
-### Start
+### Local server start
 
 ```
-python3 manage.py runserver 0.0.0.0:8000
+poetry run python manage.py runserver 0.0.0.0:8000
+```
+
+### Running in apache with WSGI
+
+Example:
+```
+WSGIScriptAlias /pbspy /home/civweb/pbspy/civdj/wsgi.py
+WSGIDaemonProcess civ.zulan.net python-home=/home/civweb/pbspy/.venv python-path=/home/civweb/pbspy
+WSGIProcessGroup civ.zulan.net
+WSGIApplicationGroup %{GLOBAL}
 ```
 
 ### Update of Localization
 
 ```
-python3 manage.py makemessages -l de
+poetry run python manage.py makemessages -l de
 [Editing po file, e.g insert new translations ]
-python3 manage.py compilemessages -l de
+poetry run python manage.py compilemessages -l de
 ```
 
 
